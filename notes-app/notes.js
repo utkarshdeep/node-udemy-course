@@ -24,6 +24,12 @@ const addNote = (title, body) => {
         console.log(chalk.red.inverse('Note title taken!'))
     } */
 
+    // added for app debugging which integrates with chorme V8 engine.
+    // To activate it, run `node inspect <rest-of-the-command>`
+    // Go to Chrome address: chrome://inspect
+    // run `restart` at the debug console prompt to start it again
+    debugger
+
     if (!duplicateNote) {
         notes.push({
             title: title,
