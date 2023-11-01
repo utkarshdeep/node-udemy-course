@@ -46,8 +46,12 @@ console.log(stock)
 console.log(rating)
 
 
-const transaction = (type, { label, stock }) => {
+const transaction = (type, { label, stock = 0 } = {}) => {
     console.log(type, label, stock)
 }
 
+// This is happy case, where we have destructured expecting that someone passes an object
 transaction('order', product)
+
+// What is nothing is passed? It will fails. To fix this, we set default values.
+transaction('order')
