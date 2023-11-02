@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 //console.log(path.join(__dirname, '../public'))
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for Expess config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -25,14 +26,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Utkarsh'
+        name: 'Utkarsh Deep'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Utkarsh'
+        name: 'Utkarsh Deep'
     })
 })
 
@@ -40,7 +41,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'Help',
-        name: 'Utkarsh'
+        name: 'Utkarsh Deep'
     })
 })
 
@@ -85,7 +86,7 @@ app.get('/help/*', (req, res) => {
     res.render('404', {
         notFoundText: 'Help article not found!',
         title: '404',
-        name: 'Utkarsh'
+        name: 'Utkarsh Deep'
     })
 })
 
@@ -94,10 +95,10 @@ app.get('*', (req, res) => {
     res.render('404', {
         notFoundText: 'Page not found!',
         title: '404',
-        name: 'Utkarsh'
+        name: 'Utkarsh Deep'
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
 })
